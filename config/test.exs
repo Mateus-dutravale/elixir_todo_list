@@ -1,5 +1,9 @@
 import Config
 
+config :elixir_todo_list, ElixirTodoList.Repo,
+  database: ":memory:",
+  pool_size: 1
+
 # We don't run a server during test. If one is required,
 # you can enable the server option below.
 config :elixir_todo_list, ElixirTodoListWeb.Endpoint,

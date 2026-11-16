@@ -1,8 +1,11 @@
 defmodule ElixirTodoListWeb.PageControllerTest do
   use ElixirTodoListWeb.ConnCase
 
+  import Phoenix.LiveViewTest
+
   test "GET /", %{conn: conn} do
-    conn = get(conn, ~p"/")
-    assert html_response(conn, 200) =~ "Peace of mind from prototype to production"
+    {:ok, view, _html} = live(conn, ~p"/")
+
+    assert has_element?(view, "#task-list")
   end
 end

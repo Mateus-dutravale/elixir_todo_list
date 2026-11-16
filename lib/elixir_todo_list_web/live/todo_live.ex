@@ -52,7 +52,7 @@ defmodule ElixirTodoListWeb.TodoLive do
       </h1>
 
       <%!-- FORMULÁRIO DE ENTRADA --%>
-      <form phx-submit="save_task" phx-change="update_form" class="flex gap-2 mb-6">
+      <form id="task-form" phx-submit="save_task" phx-change="update_form" class="flex gap-2 mb-6">
         <input
           type="text"
           name="title"

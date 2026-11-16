@@ -8,12 +8,12 @@ defmodule ElixirTodoList.Application do
   @impl true
   def start(_type, _args) do
     children = [
+      # 👈 ADICIONE ESTA LINHA (antes dos demais)
+      ElixirTodoList.Repo,
       ElixirTodoListWeb.Telemetry,
       {DNSCluster, query: Application.get_env(:elixir_todo_list, :dns_cluster_query) || :ignore},
       {Phoenix.PubSub, name: ElixirTodoList.PubSub},
-      # Start a worker by calling: ElixirTodoList.Worker.start_link(arg)
-      # {ElixirTodoList.Worker, arg},
-      # Start to serve requests, typically the last entry
+      # ...
       ElixirTodoListWeb.Endpoint
     ]
 
